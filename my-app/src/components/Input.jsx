@@ -6,6 +6,7 @@ const Input = () =>
     const [Payer,setpayer]=useState("text")
     const [amount,setamount]=useState(0)
     const [meth,setmethod]=useState("equal")
+    let arr=[]
     const addtransaction=() =>
     {
         const obj={
