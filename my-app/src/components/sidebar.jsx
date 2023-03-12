@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import logo from '../images/splitimage.jpeg';
+import {FiPlusCircle } from "react-icons/fi";
+import Cards from './Cards';
+import { useState } from "react";
 const Container = styled.div`
   background-color: #96f8e6;
   color: #595656;
@@ -44,20 +47,28 @@ const Container = styled.div`
     }
   }
 `;
+const Heading=styled.h2`
+    color:#3e3e3e;
+    margin-top:29px;
+    margin-left:22px;
+`
 export default function Sidebar() {
-    return (
-      <Container>
-        <div className="top__links">
-          <div className="logo">
-            <img src={logo} alt="spotify"/>
-          </div>
-          <ul>
-            <li>
-              <span>Welcome to SplitWise</span>
-            </li>
-          </ul>
-        </div>
-      </Container>
-    );
+  const addCard=()=>{
+    console.log("hello");
   }
-  
+  return (
+    <Container>
+      <div className="top__links">
+        <div className="logo">
+          <img src={logo} alt="spotify"/>
+        </div>
+        <ul>
+          <li>
+            <span>Welcome to SplitWise</span>
+          </li>
+        </ul>
+        <Heading>Create Your Group</Heading> <button className="btn1" onClick={addCard}><FiPlusCircle className='icon'/></button>
+      </div>
+    </Container>
+  );
+}
