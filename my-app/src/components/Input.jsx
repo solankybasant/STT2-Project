@@ -6,6 +6,18 @@ const Input = () =>
     const [Payer,setpayer]=useState("text")
     const [amount,setamount]=useState(0)
     const [meth,setmethod]=useState("equal")
+    const addtransaction=() =>
+    {
+        const obj={
+            given_by: Payer,
+            amount_paid:amount,
+            method:meth,
+            user:["u1","u2","u3"]
+        }
+        arr.unshift(obj)
+
+        console.log(arr);
+    }
   return (
     <>
         <input  type="text" name="name" placeholder='Enter payer name' autoComplete='off'
@@ -27,7 +39,7 @@ const Input = () =>
      <option value="Equal">Equal</option>
      
    </select>
-   <button >Click to create to add the transaction</button>
+   <button onClick={addtransaction} >Click to create to add the transaction</button>
    </>
     )
 }
