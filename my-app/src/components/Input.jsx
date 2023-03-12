@@ -31,4 +31,4 @@ const Input = () =>
    </>
     )
 }
-export default Cards;
+export default Input;
