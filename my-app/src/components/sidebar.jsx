@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import logo from '../images/splitbills.jpg';
+import logo from '../Images/splitbills.jpg';
 import {FiPlusCircle } from "react-icons/fi";
-import Cards from './Cards';
+import Cards from './group';
 import { useState } from "react";
 const Container = styled.div`
   background-color: #96f8e6;

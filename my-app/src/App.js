@@ -1,11 +1,12 @@
 
 import './App.css';
-// import Sidebar from './component/sidebar';
-import Input from './components/Input';
+import Sidebar from './components/sidebar';
+// import Input from './components/Input';
 function App() {
   return (
     <div>
-      <Input></Input>
+    <Sidebar/>
+      {/* <Input></Input> */}
     </div>
   );
 }
