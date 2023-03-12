@@ -52,6 +52,9 @@ export default function Sidebar() {
             <img src={logo} alt="spotify"/>
           </div>
           <ul>
+            <li>
+              <span>Welcome to SplitWise</span>
+            </li>
           </ul>
         </div>
       </Container>
