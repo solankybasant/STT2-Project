@@ -84,7 +84,7 @@ const Input = () =>
      <option value="Equal">Equal</option> 
    </select>
    </Container2>
-   <Btn >Click to create to add the transaction</Btn>
+   <Btn onClick={addtransaction} >Click to create to add the transaction</Btn>
    </Container1>
    </>
     )
