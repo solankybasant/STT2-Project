@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from '../images/splitimage.jpeg';
+import logo from '../Images/splitbills.jpg';
 import {FiPlusCircle } from "react-icons/fi";
 import { useState } from "react";
 import './index.css';

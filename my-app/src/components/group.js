@@ -23,10 +23,11 @@ const Note=styled.div`
 const Para=styled.p`
     color:green;
 `
-
 const Cards = (props) =>
  {  
-
+    const deleteNote=()=>{
+props.deleteItem(props.id);
+    }
   return (
     <Container> 
         <Note>
