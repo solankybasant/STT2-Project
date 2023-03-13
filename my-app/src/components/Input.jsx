@@ -51,6 +51,19 @@ const Input = () =>
     const [Payer,setpayer]=useState("text")
     const [amount,setamount]=useState(0)
     const [meth,setmethod]=useState("equal")
+    let arr=[]
+    const addtransaction=() =>
+    {
+        const obj={
+            given_by: Payer,
+            amount_paid:amount,
+            method:meth,
+            user:["u1","u2","u3"]
+        }
+        arr.unshift(obj)
+
+        console.log(arr);
+    }
   return (
     <>
        <Container1> 
@@ -70,7 +83,7 @@ const Input = () =>
             }}>  
             </Select> */}
    </Container2>
-   <Btn >Click to create to add the transaction</Btn>
+   <Btn onClick={addtransaction} >Click to create to add the transaction</Btn>
    </Container1>
    </>
     )
