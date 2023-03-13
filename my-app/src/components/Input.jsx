@@ -6,44 +6,46 @@ const Btn=styled.button`
    border-radius:45px; 
    background-color: #3fefc6;
    height: 45px; 
-   width: 290px;
-   margin-top: 45px;
+   width: 330px;
+   margin-top: 65px;
+   margin-left:245px;
    box-shadow: 5px 5px #c7c7c7;
 `
 const Container1=styled.div`
     background-color: #ccfdf9;
-    height: 667px; 
-    width:1267px;
+    margin:50px 250px;
 `
 const Container2=styled.div`
     background-color: #ccfdf9;
+    display: flex;
+    flex-direction: row;
 `
 const Inputstyling=styled.input`
+   border:2px solid #ddf9f5;
+   box-shadow: 1px; 
+   border-radius:45px; 
+   background-color: #ecefef;
+   height: 45px; 
+   width: 290px;
+   margin-top: 45px; 
+   padding: 4px 25px;
+   margin-left:234px;
+   color:black;
+   box-shadow: 5px 5px lightblue;
+`
+const Inputstyling2=styled.input`
    border:2px solid #ddf9f5;
    box-shadow: 2px; 
    border-radius:45px; 
    background-color: #ecefef;
    height: 45px; 
-   width: 190px;
-   margin-top: 45px; 
-   padding: 2px 2px;
-   margin-left:4px;
+   width: 290px;
+   margin-top:155px; 
+   padding: 4px 25px;
+   margin-left:-344px;
    color:black;
-   box-shadow: 10px 10px lightblue;
+   box-shadow: 5px 5px lightblue;
 `
-// const Option=styled.option`
-//   border:2px solid #ddf9f5;
-//    box-shadow: 2px; 
-//    border-radius:45px; 
-//    background-color: #ecefef;
-//    height: 45px; 
-//    width: 190px;
-//    margin-top: 45px; 
-//    padding: 2px 2px;
-//    margin-left:4px;
-//    color:black;
-//    box-shadow: 10px 10px lightblue;   
-// `
 const Input = () =>
  {  
     const [Payer,setpayer]=useState("text")
@@ -58,18 +60,15 @@ const Input = () =>
                 setpayer(e.target.value)           
             }}>
         </Inputstyling>
-        <Inputstyling  type="text" name="name" placeholder='Enter amount' autoComplete='off'
+        <Inputstyling2  type="text" name="name" placeholder='Enter amount' autoComplete='off'
             onChange={(e)=>{
                 setamount(e.target.value)           
             }}>
-        </Inputstyling>
-
-        <select onChange={(e)=>{
+        </Inputstyling2>
+    {/* <Select onChange={(e)=>{
                 setmethod(e.target.value)           
-            }}>    
-     <option value="Exact">Exact</option>
-     <option value="Equal">Equal</option> 
-   </select>
+            }}>  
+            </Select> */}
    </Container2>
    <Btn >Click to create to add the transaction</Btn>
    </Container1>
