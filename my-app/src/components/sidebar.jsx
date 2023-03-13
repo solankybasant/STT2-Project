@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import logo from '../images/splitimage.jpeg';
 import {FiPlusCircle } from "react-icons/fi";
-import Cards from './Cards';
 import { useState } from "react";
+import './index.css';
 const Container = styled.div`
   background-color: #96f8e6;
   color: #595656;
