@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import logo from '../images/splitimage.jpeg';
+import logo from '../Images/splitbills.jpg';
 import {FiPlusCircle } from "react-icons/fi";
-import Cards from './Cards';
 import { useState } from "react";
+import '../index.css';
 const Container = styled.div`
   background-color: #96f8e6;
   color: #595656;
@@ -52,9 +52,18 @@ const Heading=styled.h2`
     margin-top:29px;
     margin-left:22px;
 `
-export default function Sidebar() {
+export default function Sidebar(props) {
+  const [cards, setcards] =useState({
+    // title:'',
+    // content:'',
+   });;
   const addCard=()=>{
-    console.log("hello");
+    console.log(cards)
+    props.passNote(cards);
+    setcards({
+      // title:'',
+      // content:'',
+    })
   }
   return (
     <Container>
