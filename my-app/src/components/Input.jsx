@@ -7,7 +7,7 @@ const Btn=styled.button`
    background-color: #3fefc6;
    height: 45px; 
    width: 330px;
-   margin-top: 65px;
+   margin-top: 35px;
    margin-left:245px;
    box-shadow: 5px 5px #c7c7c7;
 `
@@ -27,11 +27,16 @@ const Inputstyling=styled.input`
    background-color: #ecefef;
    height: 45px; 
    width: 290px;
-   margin-top: 45px; 
+   margin-top: 15px; 
    padding: 4px 25px;
    margin-left:234px;
    color:black;
    box-shadow: 5px 5px lightblue;
+`
+const Container3=styled.div`
+    justify-content:center;
+    align-items: center;
+    margin-left:323px;
 `
 const Inputstyling2=styled.input`
    border:2px solid #ddf9f5;
@@ -40,7 +45,7 @@ const Inputstyling2=styled.input`
    background-color: #ecefef;
    height: 45px; 
    width: 290px;
-   margin-top:155px; 
+   margin-top:105px; 
    padding: 4px 25px;
    margin-left:-344px;
    color:black;
@@ -171,7 +176,7 @@ setflag("false")
    <Btn onClick={cal} >Calculate sum </Btn>
 
    {/* printing the statement */}
-
+    <Container3>
    {(flag=="true")?
 
     <>{trans.map((element)=>{
@@ -194,8 +199,7 @@ setflag("false")
         )
     })}</>
    }
-   
-   
+   </Container3>
    </Container1>
    </>
     )
