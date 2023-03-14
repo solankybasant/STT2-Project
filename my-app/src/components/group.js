@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'; 
+<<<<<<< HEAD
 // import {AiOutlineDelete} from 'react-icons/ai';
 import {FiPlusCircle } from "react-icons/fi";
 import '../index.css';
 import { useState } from "react";
+=======
+import {AiOutlineDelete} from 'react-icons/ai';
+import './index.css';
+>>>>>>> d1738ff884561cd21d14ba5d3875e0ccc584bd2c
 const Container=styled.div`
     width:63%; 
     box-shadow: 0 4px 8px 0 rgba(46, 46, 46, 0.2);
@@ -28,6 +33,7 @@ const Note=styled.div`
 const Para=styled.p`
     color:green;
 `
+<<<<<<< HEAD
 const Input=styled.input`
   border:none;
   font-size:17px;
@@ -35,6 +41,8 @@ const Input=styled.input`
   outline:none;
   margin-top:12px;
 `
+=======
+>>>>>>> d1738ff884561cd21d14ba5d3875e0ccc584bd2c
 const Cards = (props) =>
  {  
     const [input, setinput] =useState({
