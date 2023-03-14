@@ -3,11 +3,7 @@ import styled from "styled-components";
 import logo from '../Images/splitbills.jpg';
 import {FiPlusCircle } from "react-icons/fi";
 import { useState } from "react";
-<<<<<<< HEAD
-import '../index.css'
-=======
 import '../index.css';
->>>>>>> d1738ff884561cd21d14ba5d3875e0ccc584bd2c
 const Container = styled.div`
   background-color: #96f8e6;
   color: #595656;
