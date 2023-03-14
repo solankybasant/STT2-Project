@@ -50,19 +50,106 @@ const Input = () =>
  {  
     const [Payer,setpayer]=useState("text")
     const [amount,setamount]=useState(0)
-    const [meth,setmethod]=useState("equal")
-    let arr=[]
+    const[trans,setTrans]=useState([])
+    const [ans,setans]=useState([])
+    const[flag, setflag]=useState("true")
     const addtransaction=() =>
     {
         const obj={
-            given_by: Payer,
-            amount_paid:amount,
-            method:meth,
-            user:["u1","u2","u3"]
-        }
-        arr.unshift(obj)
+                given_by: Payer,
+                amount_paid:parseInt(amount)
+            }
+        // user.push(obj) //adding object
+        console.log([...trans,obj]);
+        setTrans([...trans,obj]);
+        // const obj={
+        //     given_by: Payer,
+        //     amount_paid:amount,
+        //     method:meth,
+        //     user:["sakshi","basant","priya"]
+        // }
+        // arr.unshift(obj)
+        // let pay=[]
+        
+    //     for(let i=0;i<arr.length;i++)
+    //     {
+    //         let average = (amount/ arr[i].user.length).toFixed(2);
+    //         for(let j=0;j<arr[i].user.length;j++)
+    //         {
+    //             if(arr[i].user[j]!=arr[i].given_by)
+    //             {
+    //                 pay.push(` ${arr[i].user[j]} will pay ${average} to ${arr[i].given_by}`)
+    //             }
+    //         }
+    //     }
 
-        console.log(arr);
+    //    console.log(pay);
+
+
+    }
+    const cal=()=>{
+        const sum = trans.map(element => element.amount_paid).reduce((a, b) => a + b, 0);
+        console.log(sum);
+        const average = (sum / trans.length).toFixed(2);
+        console.log(average);
+        var to_give=[]
+        var to_get=[]
+        trans.map(item => {
+        // console.log(item, index);
+        // console.log(average-item.amount)
+        if(average-item.amount_paid>0) 
+        {
+            to_give.push( {name: item.given_by, pay: (average-item.amount_paid).toFixed(2)});
+        }
+        else if( average-item.amount_paid<0)
+        {
+            to_get.push( {name: item.given_by, pay: (item.amount_paid-average).toFixed(2)});
+        }
+        });
+        console.log(to_get);
+        console.log(to_give);
+        function compareName(a, b) {
+            return a.pay>=b.pay    
+        }
+        to_give.sort(compareName);
+        to_get.sort(compareName);
+        console.log(to_get);
+        console.log(to_give)
+        // let ans=[]
+        while(to_give.length>0)
+        {
+            let give=to_give[0].pay;
+            let from=to_give[0].name;
+            let get=to_get[0].pay;
+            let to=to_get[0].name;
+            // console.log(get);
+    // console.log(give);
+    
+    if(give<get)
+    {
+        console.log("paying")
+        to_give.shift();
+        to_get[0].pay=to_get[0].pay-give;
+            ans.push(` ${from} will pay ${give} to ${to}` )
+    }
+    else if(give==get)
+    {
+        console.log(give)
+        to_give.shift();
+        to_get.shift();
+       ans.push(` ${from} will pay ${give} to ${to}` )
+    }
+    else
+    {
+        to_get.shift();
+        to_give[0].pay=to_give[0].pay-get;
+         ans.push(` ${from} will pay ${get} to ${to}` )
+    }
+    
+}
+// setTrans([...trans,obj]);
+setans(ans);
+setflag("false")
     }
   return (
     <>
@@ -78,12 +165,37 @@ const Input = () =>
                 setamount(e.target.value)           
             }}>
         </Inputstyling2>
-    {/* <Select onChange={(e)=>{
-                setmethod(e.target.value)           
-            }}>  
-            </Select> */}
+
    </Container2>
-   <Btn onClick={addtransaction} >Click to create to add the transaction</Btn>
+   <Btn onClick={addtransaction} >Click to add the transaction</Btn>
+   <Btn onClick={cal} >Calculate sum </Btn>
+
+   {/* printing the statement */}
+
+   {(flag=="true")?
+
+    <>{trans.map((element)=>{
+        return (
+            <div>
+            
+            <h3> {element.given_by} paid {element.amount_paid}</h3>
+            <h1></h1>
+        </div>
+        )
+    })}</>
+    :
+    <>{ans.map((element)=>{
+        return (
+            <div>
+            
+            <h3> {element}</h3>
+            <h1></h1>
+        </div>
+        )
+    })}</>
+   }
+   
+   
    </Container1>
    </>
     )

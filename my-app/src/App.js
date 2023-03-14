@@ -5,8 +5,8 @@ import Input from './components/Input';
 function App() {
   return (
     <div>
-    <Sidebar/>
-      {/* <Input></Input> */}
+    {/* <Sidebar/> */}
+      <Input></Input>
     </div>
   );
 }
